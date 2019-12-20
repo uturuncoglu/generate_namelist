@@ -89,11 +89,11 @@ do
   # add part other than entry
   IFS=$'#'
   array=( $( head -n $((lno1-1)) namelist_definition_fv3.xml | tail -n $((lno1-lno4)) ) )
-  for line in "${array[@]}"
-  do
-    echo $line
-  done  
-  echo ""
+  #for line in "${array[@]}"
+  #do
+  #  echo $line
+  #done  
+  #echo ""
 
   # add new entry
   if [ -n "$str_add" -a -n "${val_in_nml}" ]; then
@@ -116,14 +116,14 @@ do
   else
     # add as it is
     array=( $( head -n $lno2 namelist_definition_fv3.xml | tail -n $((lno2-lno1+1)) ) )
-    for line in "${array[@]}"
-    do
-      echo $line
-    done
+    #for line in "${array[@]}"
+    #do
+    #  echo $line
+    #done
   fi
 
   lno4=$((lno2+1))
 done
 
-echo ""
-echo "</entry_id>"
+#echo ""
+#echo "</entry_id>"
